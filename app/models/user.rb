@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
+# validate記述
 # with_options presence: true do
     validates :nickname, presence: true
     validates :knj_first_name, presence: true

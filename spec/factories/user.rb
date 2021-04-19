@@ -1,3 +1,4 @@
+# テストコード作成
 FactoryBot.define do
   factory :user do
     nickname              {Faker::Name.name}
@@ -11,4 +12,3 @@ FactoryBot.define do
     birth_day { '2000-01-01' }
   end
 end
-# sample
