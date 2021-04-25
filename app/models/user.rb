@@ -14,7 +14,7 @@ class User < ApplicationRecord
     validates :kana_first_name
     validates :kana_last_name
   end
-    validates :encrypted_password, :password, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'Include both letters and numbers' }
+    validates :password, format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'Include both letters and numbers' }
     validates :birth_day
 end
 end

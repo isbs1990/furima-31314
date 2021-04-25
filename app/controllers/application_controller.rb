@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!, except: [:show, :index]
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  #application_controller.rb 確認をお願いします
   private
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname , :email , :knj_first_name , :knj_last_name , :kana_first_name , :kana_last_name , :birth_day])
