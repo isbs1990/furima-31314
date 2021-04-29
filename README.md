@@ -1,10 +1,10 @@
 # テーブル設計
 
 ## usersテーブル(ユーザー情報テーブル)
-| Column                               | Type    | Options     |
-| -------------------------            | ------- | ----------- |
-| nickname(ニックネーム)                 | string  | null: false |
-| email（メールアドレス）          　　　  | string  | null: false, unique: true |
+| Column                          | Type    | Options     |
+| -------------------------       | ------- | ----------- |
+| nickname(ニックネーム)            | string  | null: false |
+| email（メールアドレス）            | string  | null: false, unique: true |
 | encrypted_password（パスワード）       | string  | null: false |
 | knj_first_name（漢字姓）              | string  | null: false |
 | knj_last_name（漢字名）               | string  | null: false |
@@ -26,7 +26,7 @@
 | delivery_cost_id(負担額)        | integer            | null: false |
 | pref_id(県)                    | integer            | null: false |
 | delivery_day_id(発送日)         | integer             | null: false |
-| price(販売価格)              | integer           　　　 | null: false |
+| price(販売価格)              | integer            | null: false |
 | user(ユーザー)              | references        | null: false |
 
 ### Association
@@ -51,7 +51,7 @@
 | Column                                | Type                  | Options     |
 | -------------------------             | -------               | ----------- |
 | user                                  | references　    | null: false |
-| item_sale                             | references| null: false |
+| item                             | references| null: false |
 
 ### Association
 - has_one :item_buy
