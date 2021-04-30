@@ -134,7 +134,7 @@
           <%= image_tag item.image, class: "item-img" %>
 
           <%# 商品が売れていればsold outを表示しましょう %>
-           <% if item.order.present? %>
+          <% if item.order.present? %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
@@ -176,8 +176,17 @@
               <span class='star-count'>0</span>
             </div>
           </div>
+          <div class='item-img-content'>
+          <%= image_tag "item-sample.png", class: "item-img" %>
+          <%# 商品が売れていればsold outを表示しましょう %>
+          <div class='sold-out'>
+            <span>Sold Out!!</span>
+          </div>
+          <%# //商品が売れていればsold outを表示しましょう %>
+        </div>
           <% end %>
         </div>
+        
         <% end %>
       </li>
       <%# //商品がある場合は表示されないようにしましょう %>
