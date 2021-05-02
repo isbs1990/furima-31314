@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   # before_action :move_to_index, except: [:index, :show] 
-  # before_action :item_for_params, only: [:show, :edit, :update, :destroy]
-  # before_action :move_to_index, only: [:edit, :update, :destroy]
+  before_action :item_for_params, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @items = Item.order("created_at DESC")
@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
   #   redirect_to root_path
   # end
 
-  # def show
-  # end
+  def show
+  end
 
   # def edit
   # end
@@ -46,7 +46,7 @@ class ItemsController < ApplicationController
   # end
 
   def item_params
-    params.require(:item).permit(:name, :description , :detail_category_id , :detail_status_id , :deliverycost_id , :pref_id , :deliveryday_id , :price ,:image).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description , :detailcategory_id , :detailstatus_id , :deliverycost_id , :pref_id , :deliveryday_id , :price ,:image).merge(user_id: current_user.id)
   end
 
   def item_for_params

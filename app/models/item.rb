@@ -1,11 +1,11 @@
 class Item < ApplicationRecord
   belongs_to :user
-  # has_one :order
+  has_one :order
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category
-  belongs_to :status
-  belongs_to :prefecture
+  belongs_to :detailcategory
+  belongs_to :detailstatus
+  belongs_to :pref
   belongs_to :deliverycost
   belongs_to :deliveryday
   
@@ -17,10 +17,10 @@ class Item < ApplicationRecord
   end
 
   with_options numericality: { other_than: 1 } do
-    validates :detail_category_id
-    validates :detail_status_id
+    validates :detailcategory_id
+    validates :detailstatus_id
     validates :pref_id
     validates :deliverycost_id
     validates :deliveryday_id
   end
-  end
+end

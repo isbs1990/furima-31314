@@ -2,8 +2,8 @@ FactoryBot.define do
   factory :item do
     name { 'スーツ' }
     description { Faker::Lorem.sentence }
-    detail_category_id { 2 }
-    detail_status_id { 2 }
+    detailcategory_id { 2 }
+    detailstatus_id { 2 }
     pref_id { 2 }
     deliverycost_id { 2 }
     deliveryday_id { 2 }

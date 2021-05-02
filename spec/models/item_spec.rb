@@ -29,28 +29,28 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Description can't be blank")
     end
 
-    it 'detail_category_idが空では登録できないこと' do
-      @item.detail_category_id = ''
+    it 'detailcategory_idが空では登録できないこと' do
+      @item.detailcategory_id = ''
       @item.valid?
-      expect(@item.errors.full_messages).to include("Detail category is not a number")
+      expect(@item.errors.full_messages).to include("Detailcategory is not a number")
     end
 
     it 'categoryの1を選択すると登録できないこと' do
-      @item.detail_category_id = 1
+      @item.detailcategory_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include('Detail category must be other than 1')
+      expect(@item.errors.full_messages).to include('Detailcategory must be other than 1')
     end
 
     it 'statusが空では登録できないこと' do
-      @item.detail_status_id = ''
+      @item.detailstatus_id = ''
       @item.valid?
-      expect(@item.errors.full_messages).to include("Detail status is not a number")
+      expect(@item.errors.full_messages).to include("Detailstatus is not a number")
     end
 
     it 'statusの1を選択すると登録できないこと' do
-      @item.detail_status_id = 1
+      @item.detailstatus_id = 1
       @item.valid?
-      expect(@item.errors.full_messages).to include("Detail status must be other than 1")
+      expect(@item.errors.full_messages).to include("Detailstatus must be other than 1")
     end
 
     it 'DeliveryCostがなければ登録できないこと' do
