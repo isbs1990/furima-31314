@@ -20,13 +20,13 @@ class ItemsController < ApplicationController
     end
   end
 
-  # def update
-  #   if @item.update(item_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
 
   # def destroy
   #   @item.destroy
@@ -36,14 +36,14 @@ class ItemsController < ApplicationController
   def show
   end
 
-  # def edit
-  # end
+  def edit
+  end
 
-  # private
+  private
 
-  # def move_to_index
-  #   redirect_to action: :index if current_user.id != @item.user_id || @item.order.present?
-  # end
+  def move_to_index
+    redirect_to action: :index if current_user.id != @item.user_id || @item.order.present?
+  end
 
   def item_params
     params.require(:item).permit(:name, :description , :detailcategory_id , :detailstatus_id , :deliverycost_id , :pref_id , :deliveryday_id , :price ,:image).merge(user_id: current_user.id)
