@@ -54,7 +54,7 @@ RSpec.describe OrderBuyer, type: :model do
       it 'buytellnumにハイフンは不要であること' do
         @order_buyer.buytellnum = '123-4567-8901'
         @order_buyer.valid?
-        expect(@order_buyer.errors.full_messages).to include("Buytellnum はハイフンなし、 かつ１２桁以上では登録できません", "Buytellnum 半角数字以外では登録できません")
+        expect(@order_buyer.errors.full_messages).to include("Buytellnum はハイフンなし、 かつ１２桁以上では登録できません")
       end
 
       it 'buytellnumは１２桁以上では登録できないこと' do
@@ -67,19 +67,19 @@ RSpec.describe OrderBuyer, type: :model do
       it 'buytellnumは英字のみでは登録できないこと' do
         @order_buyer.buytellnum = 'abcdefghijkl'
         @order_buyer.valid?
-        expect(@order_buyer.errors.full_messages).to include("Buytellnum はハイフンなし、 かつ１２桁以上では登録できません", "Buytellnum 半角数字以外では登録できません")
+        expect(@order_buyer.errors.full_messages).to include("Buytellnum はハイフンなし、 かつ１２桁以上では登録できません")
       end
 
       it 'buytellnumは英数字混合では登録できないこと' do
         @order_buyer.buytellnum = '123456abcdef'
         @order_buyer.valid?
-        expect(@order_buyer.errors.full_messages).to include("Buytellnum はハイフンなし、 かつ１２桁以上では登録できません", "Buytellnum 半角数字以外では登録できません")
+        expect(@order_buyer.errors.full_messages).to include("Buytellnum はハイフンなし、 かつ１２桁以上では登録できません")
       end
 
       it 'buytellnumは全角数字では登録できないこと' do
         @order_buyer.buytellnum = '１２３４５６７８９０１２'
         @order_buyer.valid?
-        expect(@order_buyer.errors.full_messages).to include("Buytellnum はハイフンなし、 かつ１２桁以上では登録できません", "Buytellnum 半角数字以外では登録できません")
+        expect(@order_buyer.errors.full_messages).to include("Buytellnum はハイフンなし、 かつ１２桁以上では登録できません")
       end
 
       it 'pref_idがなければ登録できないこと' do
